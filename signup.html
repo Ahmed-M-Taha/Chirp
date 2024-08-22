@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Chirp</title>
+    <link rel="stylesheet" href="assets/css/Form.css">
+    <link href="assets/bs/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  </head>
+<body id="body">
+    <div class="form exo">
+      <img src="/assets/img/Logo 3.png" style="width:100%;" alt="">
+      <h1>
+        Welcome To <br> Chirp
+      </h1>
+      <h3>
+        Sign Up
+      </h3>
+      <hr>
+     <input id="input" type="email" placeholder="Enter Email Here">
+      <br>
+      <input id="input" type="Text" placeholder="Enter Full Name Here">
+      <br>
+      <input id="input" type="password" placeholder="Enter Password Here">
+     
+      <button type="submit" style="margin-bottom: 1em; margin-top: 1em; width: 85%;"  class="btn btn-primary">
+        Sign Up
+      </button>
+    </div>
+  
+    <div class=" form">
+      <div id="g_id_onload"
+          data-client_id="YOUR_GOOGLE_CLIENT_ID"
+          data-login_uri="https://your.domain/your_login_endpoint"
+          data-auto_prompt="false">
+      </div>
+      <div style=" margin: 1em;" class="g_id_signin"
+          data-type="standard"
+          data-size="large"
+          data-theme="outline"
+          data-text="continue_with"
+          data-shape="rectangular"
+          data-logo_alignment="left">
+      </div>
+    </div>
+    <div class="form">
+      <p style="margin: 1em;">If You Already Have Account Click <br><a id="a" href="signin.html">Here</a></p>
+    </div>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+</body>
+</html>
