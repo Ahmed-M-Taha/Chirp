@@ -1,0 +1,10 @@
+nav{
+    list-style: none;
+    background-color: #C7FFED;
+}
+
+.navigation {
+    background-color: lightseagreen;
+    border: solid 2px;
+    border-radius: 1%;
+}
