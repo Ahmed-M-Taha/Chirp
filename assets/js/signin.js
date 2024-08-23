@@ -1,10 +1,23 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { firebaseConfig } from "./firebaseConfig.js";
+import { getAnalytics } from "firebase/analytics";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCygZMWHgH3k9ovC-fe1fIPw2Sxw_pgaSw",
+  authDomain: "chirp-73628.firebaseapp.com",
+  projectId: "chirp-73628",
+  storageBucket: "chirp-73628.appspot.com",
+  messagingSenderId: "595021201665",
+  appId: "1:595021201665:web:b744378dbb215aeb641b00",
+  measurementId: "G-Q85L717F3Q"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const analytics = getAnalytics(app);
 
 // Function to handle the sign-in process
 async function signInUser(email, password) {
