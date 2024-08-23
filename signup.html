@@ -10,49 +10,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css1?family=Exo:ital,wght@0,300;1,300&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  </head>
+</head>
 <body id="body">
     <div class="form exo">
-      <img src="/assets/img/Logo 3.png" style="width:50%;" alt="">
-      <h1>
-        Welcome To <br> Chirp
-      </h1>
-      <h3>
-        Sign Up
-      </h3>
-      <hr>
-     <input id="input" type="email" class="input-sm" required placeholder="Enter Email Here">
-      <br>
-      <input id="input" type="Text" required placeholder="Enter Full Name Here">
-      <br>
-      <input id="input" type="password" required placeholder="Enter Password Here">
-     
-      <button type="submit" style="margin-bottom: 1em; margin-top: 1em; width: 85%;"  class="btn btn-primary">
-        Sign Up
-      </button>
-    </div>
-  
-    <div class=" form">
-      <div id="g_id_onload"
-      data-client_id="686156180483-ij6p8555b43dsltddi34dlph8e72sd0i.apps.googleusercontent.com"
-      data-login_uri="https://your.domain/your_login_endpoint"
-      data-auto_prompt="false">
-   </div>
-   <div class="g_id_signin"
-      data-type="standard"
-      data-size="large"
-      data-theme="outline"
-      data-text="sign_in_with"
-      data-shape="rectangular"
-      data-callback="OnSuccess"
-      data-logo_alignment="left">
-   </div>
-</body>
+        <img src="/assets/img/Logo 3.png" style="width:50%;" alt="">
+        <h1>
+            Welcome To <br> Chirp
+        </h1>
+        <h3>
+            Sign Up
+        </h3>
+        <hr>
+        <input id="input" class="email" type="email" class="input-sm" required placeholder="Enter Email Here">
+        <br>
+        <input id="input" class="fullName" type="text" required placeholder="Enter Full Name Here">
+        <br>
+        <input id="input" class="password" type="password" required placeholder="Enter Password Here">
+        <br>
+        <input id="input" class="username" type="text" required placeholder="Enter Username Here">
+        <br>
+        <button id="signupButton" type="submit" style="margin-bottom: 1em; margin-top: 1em; width: 85%;" class="btn btn-primary">
+            Sign Up
+        </button>
     </div>
     <div class="form">
-      <p style="margin: 1em;">If You Already Have Account Click <br><a id="a" href="signin.html">Here</a></p>
+        <p style="margin: 1em;">If You Already Have Account Click <br><a id="a" href="signin.html">Here</a></p>
     </div>
     <script src="https://accounts.google.com/gsi/client" async></script>
-    <script src="./assets/js/script.js"></script>
+    <script type="module" src="./assets/js/signup.js"></script>
 </body>
 </html>

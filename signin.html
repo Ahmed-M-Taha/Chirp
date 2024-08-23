@@ -21,33 +21,19 @@
         Sign In
       </h3>
       <hr>
-     <input id="input" type="email" required placeholder="Enter Email Here">
+     <input id="input" class="signin" type="email" required placeholder="Enter Email Here">
       <br>
-      <input id="input" type="password" required placeholder="Enter Password Here">
+      <input id="input" class="signin" type="password" required placeholder="Enter Password Here">
       <br>
       <button type="submit" style="margin-bottom: 1em; margin-top: 1em; width: 85%;"  class="btn btn-primary">
         Sign In
       </button>
     </div>
-  
-    <div class=" form">
-      <div id="g_id_onload"
-          data-client_id="YOUR_GOOGLE_CLIENT_ID"
-          data-login_uri="https://your.domain/your_login_endpoint"
-          data-auto_prompt="false">
-      </div>
-      <div style="margin: 1em;" class="g_id_signin"
-          data-type="standard"
-          data-size="large"
-          data-theme="outline"
-          data-text="continue_with"
-          data-shape="rectangular"
-          data-logo_alignment="left">
-      </div>
-    </div>
+
     <div class="form">
       <p style="margin: 1em;">If You Dont Have Account Click <br><a id="a" href="signup.html">Here</a></p>
     </div>
     <script src="https://accounts.google.com/gsi/client" async></script>
+    <script src="./assets/js/signin.js"></script>
 </body>
 </html>
