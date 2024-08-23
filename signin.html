@@ -6,34 +6,67 @@
     <title>Welcome Back To Chirp</title>
     <link rel="stylesheet" href="assets/css/Form.css">
     <link href="assets/bs/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  </head>
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+      const firebaseConfig = {
+      apiKey: "AIzaSyCygZMWHgH3k9ovC-fe1fIPw2Sxw_pgaSw",
+      authDomain: "chirp-73628.firebaseapp.com",
+      projectId: "chirp-73628",
+      storageBucket: "chirp-73628.appspot.com",
+      messagingSenderId: "595021201665",
+      appId: "1:595021201665:web:b744378dbb215aeb641b00",
+      measurementId: "G-Q85L717F3Q"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firebase Auth
+        const auth = firebase.auth();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('signinBtn').addEventListener('click', async () => {
+                const email = document.querySelector('.signin').value;
+                const password = document.querySelector('.signin').nextElementSibling.value;
+
+                if (!email || !password) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                try {
+                    await auth.signInWithEmailAndPassword(email, password);
+                    alert('Sign In successful!');
+                    // Redirect or handle post-sign-in actions
+                } catch (error) {
+                    console.error('Error signing in: ', error);
+                    alert('Error signing in. Please check your credentials.');
+                }
+            });
+        });
+    </script> -->
+</head>
 <body id="body">
     <div class="form exo">
-      <img src="/assets/img/Logo 3.png" style="width:100%;" alt="">
-      <h1>
-        Welcome Back To Chirp
-      </h1>
-      <h3>
-        Sign In
-      </h3>
-      <hr>
-     <input id="input" class="signin" type="email" required placeholder="Enter Email Here">
-      <br>
-      <input id="input" class="signin" type="password" required placeholder="Enter Password Here">
-      <br>
-      <button type="submit" style="margin-bottom: 1em; margin-top: 1em; width: 85%;"  class="signinButton btn btn-primary">
-        Sign In
-      </button>
+        <img src="/assets/img/Logo 3.png" style="width:50%;" alt="">
+        <h1>Sign In</h1>
+        <hr>
+        <input id="input" class="signin" type="email" required placeholder="Enter Email Here">
+        <br>
+        <input id="input" class="signin" type="password" required placeholder="Enter Password Here">
+        <br>
+        <button id="signinBtn" type="submit" style="margin-bottom: 1em; margin-top: 1em; width: 85%;" class="signinButton btn btn-primary">
+            Sign In
+        </button>
     </div>
 
     <div class="form">
-      <p style="margin: 1em;">If You Dont Have Account Click <br><a id="a" href="signup.html">Here</a></p>
-    </div>
-    <script src="https://accounts.google.com/gsi/client" async></script>
-    <script src="./assets/js/signin.js"></script>
+        <p style="margin: 1em;">If You Don't Have an Account Click <br><a id="a" href="signup.html">Here</a></p>
+    </div> 
+
+    <script src="assets/not in use/signin.js"></script>
+
 </body>
 </html>

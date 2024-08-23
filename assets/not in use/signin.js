@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+let firebase = require('firebase/app');
+let analytics_fb = require('firebase/analytics');
+let firestore = require('firebase/firestore/lite');
+let authen = require('firebase/auth');
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,22 +16,28 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const analytics = getAnalytics(app);
+const app = firebase.initializeApp(firebaseConfig);
+const auth = authen.getAuth(app);
+const analytics = analytics_fb.getAnalytics(app);
+
+let signInBtn = document.getElementById("signInBtn");
+
+signInBtn.onclick = signInUser();
 
 // Function to handle the sign-in process
 async function signInUser(email, password) {
     try {
         // Sign in with email and password
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const userCredential = await authen.signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
         console.log("User signed in:", user);
         alert("Sign in successful!");
+        console.log(email, password);
     } catch (error) {
         console.error("Error signing in: ", error);
         alert("Error signing in: " + error.message);
+
     }
 }
 

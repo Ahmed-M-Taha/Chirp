@@ -9,34 +9,76 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css1?family=Exo:ital,wght@0,300;1,300&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+
 </head>
 <body id="body">
     <div class="form exo">
         <img src="/assets/img/Logo 3.png" style="width:50%;" alt="">
-        <h1>
-            Welcome To <br> Chirp
-        </h1>
-        <h3>
-            Sign Up
-        </h3>
+        <h1>Sign Up</h1>
         <hr>
-        <input id="input" class="email" type="email" class="input-sm" required placeholder="Enter Email Here">
+        <input class="email" type="email" required placeholder="Enter Email Here">
         <br>
-        <input id="input" class="fullName" type="text" required placeholder="Enter Full Name Here">
+        <input class="fullName" type="text" required placeholder="Enter Full Name Here">
         <br>
-        <input id="input" class="password" type="password" required placeholder="Enter Password Here">
+        <input class="password" type="password" required placeholder="Enter Password Here">
         <br>
-        <input id="input" class="username" type="text" required placeholder="Enter Username Here">
+        <input class="username" type="text" required placeholder="Enter Username Here">
         <br>
-        <button class="signupButton btn btn-primary" type="submit" style="margin-bottom: 1em; margin-top: 1em; width: 85%;">
+        <button class="signupButton btn btn-primary" type="button" style="margin-bottom: 1em; margin-top: 1em; width: 85%;">
             Sign Up
         </button>
     </div>
     <div class="form">
         <p style="margin: 1em;">If You Already Have Account Click <br><a id="a" href="signin.html">Here</a></p>
     </div>
-    <script src="https://accounts.google.com/gsi/client" async></script>
-    <script type="module" src="./assets/js/signup.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCygZMWHgH3k9ovC-fe1fIPw2Sxw_pgaSw",
+            authDomain: "chirp-73628.firebaseapp.com",
+            projectId: "chirp-73628",
+            storageBucket: "chirp-73628.appspot.com",
+            messagingSenderId: "595021201665",
+            appId: "1:595021201665:web:b744378dbb215aeb641b00",
+            measurementId: "G-Q85L717F3Q"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firestore
+        const db = firebase.firestore();
+
+        // Handle form submission
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.signupButton').addEventListener('click', async () => {
+                const email = document.querySelector('.email').value;
+                const fullName = document.querySelector('.fullName').value;
+                const password = document.querySelector('.password').value;
+                const username = document.querySelector('.username').value;
+
+                if (!email || !fullName || !password || !username) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                try {
+                    await db.collection('users').add({
+                        email: email,
+                        fullName: fullName,
+                        password: password,
+                        username: username
+                    });
+                    alert('Data submitted successfully!');
+                } catch (error) {
+                    console.error('Error adding document: ', error);
+                    alert('Error submitting data.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
