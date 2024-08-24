@@ -2,7 +2,7 @@
 let firebase = require('firebase/app');
 let analytics_fb = require('firebase/analytics');
 let firestore = require('firebase/firestore/lite');
-let authen = require('firebase/auth');
+let auth_fb = require('firebase/auth');
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,7 +17,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
-const auth = authen.getAuth(app);
+const auth = auth_fb.getAuth(app);
 const analytics = analytics_fb.getAnalytics(app);
 
 let signInBtn = document.getElementById("signInBtn");
@@ -28,7 +28,7 @@ signInBtn.onclick = signInUser();
 async function signInUser(email, password) {
     try {
         // Sign in with email and password
-        const userCredential = await authen.signInWithEmailAndPassword(auth, email, password);
+        const userCredential = await auth_fb.signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
         console.log("User signed in:", user);
