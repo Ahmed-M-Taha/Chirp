@@ -6,47 +6,6 @@
     <title>Welcome Back To Chirp</title>
     <link rel="stylesheet" href="assets/css/Form.css">
     <link href="assets/bs/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-      const firebaseConfig = {
-      apiKey: "AIzaSyCygZMWHgH3k9ovC-fe1fIPw2Sxw_pgaSw",
-      authDomain: "chirp-73628.firebaseapp.com",
-      projectId: "chirp-73628",
-      storageBucket: "chirp-73628.appspot.com",
-      messagingSenderId: "595021201665",
-      appId: "1:595021201665:web:b744378dbb215aeb641b00",
-      measurementId: "G-Q85L717F3Q"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        // Initialize Firebase Auth
-        const auth = firebase.auth();
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('signinBtn').addEventListener('click', async () => {
-                const email = document.querySelector('.signin').value;
-                const password = document.querySelector('.signin').nextElementSibling.value;
-
-                if (!email || !password) {
-                    alert('Please fill in all fields.');
-                    return;
-                }
-
-                try {
-                    await auth.signInWithEmailAndPassword(email, password);
-                    alert('Sign In successful!');
-                    // Redirect or handle post-sign-in actions
-                } catch (error) {
-                    console.error('Error signing in: ', error);
-                    alert('Error signing in. Please check your credentials.');
-                }
-            });
-        });
-    </script> -->
 </head>
 <body id="body">
     <div class="form exo">
@@ -62,11 +21,15 @@
         </button>
     </div>
 
+    <div id="status">
+
+    </div>
+
     <div class="form">
         <p style="margin: 1em;">If You Don't Have an Account Click <br><a id="a" href="signup.html">Here</a></p>
     </div> 
 
-    <script src="assets/not in use/signin.js"></script>
+    <script src="assets/js/signin.js"></script>
 
 </body>
 </html>
