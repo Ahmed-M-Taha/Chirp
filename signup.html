@@ -14,7 +14,7 @@
 </head>
 <body id="body">
     <div class="form exo">
-        <img src="/assets/img/Logo 3.png" style="width:50%;" alt="">
+        <img src="./assets/img/Logo 3.png" style="width:50%;" alt="">
         <h1>Sign Up</h1>
         <hr>
         <input class="email" type="email" required placeholder="Enter Email Here">
@@ -29,57 +29,12 @@
             Sign Up
         </button>
     </div>
+    <div id="status">
+
+    </div>
     <div class="form">
         <p style="margin: 1em;">If You Already Have Account Click <br><a id="a" href="signin.html">Here</a></p>
     </div>
-<!--     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCygZMWHgH3k9ovC-fe1fIPw2Sxw_pgaSw",
-            authDomain: "chirp-73628.firebaseapp.com",
-            projectId: "chirp-73628",
-            storageBucket: "chirp-73628.appspot.com",
-            messagingSenderId: "595021201665",
-            appId: "1:595021201665:web:b744378dbb215aeb641b00",
-            measurementId: "G-Q85L717F3Q"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        // Initialize Firestore
-        const db = firebase.firestore();
-
-        // Handle form submission
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('.signupButton').addEventListener('click', async () => {
-                const email = document.querySelector('.email').value;
-                const fullName = document.querySelector('.fullName').value;
-                const password = document.querySelector('.password').value;
-                const username = document.querySelector('.username').value;
-
-                if (!email || !fullName || !password || !username) {
-                    alert('Please fill in all fields.');
-                    return;
-                }
-
-                try {
-                    await db.collection('users').add({
-                        email: email,
-                        fullName: fullName,
-                        password: password,
-                        username: username
-                    });
-                    alert('Data submitted successfully!');
-                } catch (error) {
-                    console.error('Error adding document: ', error);
-                    alert('Error submitting data.');
-                }
-            });
-        });
-    </script> -->
-    <script src="assets/sql/signup.js"></script>
+    <script type="module" src="assets/js/signup.js"></script>
 </body>
 </html>
